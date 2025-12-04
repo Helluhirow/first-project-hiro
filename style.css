@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  text-align: center;
+}
+
+section {
+  padding: 40px;
+  border-bottom: 2px solid #eee;
+}
+
+/* En-tête */
+header {
+  background: linear-gradient(to left, #03a5fc, #03d7fc);
+  color: white;
+  padding: 20px 0;
+}
+
+/* Profil étudiant */
+.profil{
+  background-color: rgb(237, 251, 251);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    align-content: center;
+    height: 50%;
+    width: 50%;
+    margin-left: 22%;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+.profil img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.profil h2 {
+  margin: 10px 0 5px;
+}
+
+footer {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Liste de projets */
+.projets {
+  list-style-type: square;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.projets li {
+  background: #eaf1ff;
+  border: 2px solid #6a11cb;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.projets li:hover {
+  background: #6a11cb;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Carte d’annonce */
+.carte {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.carte img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.carte:hover img {
+  opacity: 0.7;
+}
+
+.carte .badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: crimson;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  z-index: 1;
+}
+
+.carte p {
+  padding: 15px;
+  background: white;
+  font-size: 0.95em;
+}
+
+/* Bouton animé */
+.cta {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.cta:hover::before {
+  left: 125%;
+}
+
+.cta:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Portfolio */
+.portfolio {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 250px;
+  height: 150px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carte3d {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+
+.interieur {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.carte3d:hover .interieur {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.arriere {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .portfolio {
+    flex-direction: column;
+    align-items: center;
+  }
+  .item {
+    margin-bottom: 20px;
+  }
+}
